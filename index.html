@@ -5,22 +5,118 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./image/json.png" type="image/x-icon">
     <title>
         Jolt Conditional Builder
     </title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/bootstrap-tagsinput.css" />
+
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
 
-    <input type="text" value="html,input,tag" data-role="tagsinput"></input>
+    <div class="navbar-fixed">
+        <nav class="grey darken-4">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center"><i class="material-icons">lightbulb_outline</i> Jolt Conditional
+                    Builder <i class="material-icons right">lightbulb_outline</i></a>
+            </div>
+        </nav>
+    </div>
 
-    <script src="./script/script.js"></script>
+    <div class="container">
+
+        <div class="row">
+            <div class="col s12">
+                <div class="card grey lighten-1 center">
+                    <div class="card-content white-text">
+                        <p>This is a tool created to build a <b>JOLT</b> spec when we need to perform a <b>IF</b> on a
+                            field with a <b>large amount</b>(or not) of values to check.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6">
+                <div class="input-field">
+                    <input id="checked_field" type="text">
+                    <label for="checked_field">Field to be checked (JSON Field)</label>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="input-field">
+                    <input id="result_field" type="text">
+                    <label for="result_field">Result field (dot notation)</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col s12">
+                <div class="divider"></div>
+            </div>
+
+            <div class="col s12 center pt-2 pb-2">
+                <a id="transform_btn" class="waves-effect waves-light btn green darken-1">Transform</a>
+            </div>
+
+            <div class="col s12">
+                <div class="divider"></div>
+            </div>
+
+            <div class="col s12">
+                <table class="responsive-table" id="rules_table">
+                    <thead>
+                        <tr>
+                            <th>Value</th>
+                            <th>Result</th>
+                            <th><a id="add_rule_btn" class="waves-effect waves-light btn blue darken-1 right">Add</a>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="input-field m-0">
+                                    <input class="rule_from" type="text">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-field m-0">
+                                    <input class="rule_to" type="text">
+                                </div>
+                            </td>
+                            <td class="td-delete">
+                                <a id="delete_rule" class="waves-effect waves-light btn grey lighten-1">delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <code id="result_modal">
+                    askdasodkasokdaso dasokd asokd oask daso kd asokd
+                </code>
+            </div>
+        </div>
+
+    </div>
+
     <script src="./script/jquery.min.js"></script>
-    <script src="./script/bootstrap-tagsinput.min.js"></script>
-    
+    <script src="./script/materialize.min.js"></script>
+    <script src="./script/script.js"></script>
+
+
 </body>
 
 </html>
